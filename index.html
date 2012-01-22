@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<title>Learn HTML</title>
+		<!-- Styling -->
+		<link rel="stylesheet" href="css/style.css">
+		<!-- Styling for the editor -->
+		<link rel="stylesheet" type="text/css" href="markitup/skins/markitup/style.css" />
+		<link rel="stylesheet" type="text/css" href="markitup/sets/html/style.css" />
+		
+		<!-- Javascript -->
+		<script src="js/editor.js"></script>
+		<script src="js/lessons.js"></script>
+		<script src="js/html.js"></script>
+		<!-- jQuery! -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+		<!-- JS for the editor -->
+		<script type="text/javascript" src="markitup/jquery.markitup.js"></script>
+		<script type="text/javascript" src="markitup/sets/html/set.js"></script>
+		
+		<!-- Initialization -->
+		<script>
+			$(document).ready(function() {
+				Editor.initialize();
+				HTMLessons.initialize();
+			});
+		</script>
+	</head>
+	<body>
+		<div id='container'>
+			<!-- The input container holds where the user does his/her work -->
+			<div id='input_container'>
+				<div id='input'></div>
+			</div>
+			
+			<!-- The lesson container is where the lesson itself is shown -->
+			<div id='lesson_container'>
+				Type something
+			</div>
+			
+			<!-- This is where the fruit of your labor is displayed -->
+			<div id='results'></div>
+		</div>
+	</body>
+</html>
