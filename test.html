@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<!-- Include jQuery -->
+		<!--<script src="js/jquery.js"></script>-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<!-- qUnit-specific stuff -->
+		<link rel="stylesheet" href="http://code.jquery.com/qunit/git/qunit.css" type="text/css" media="screen" />
+		<script type="text/javascript" src="http://code.jquery.com/qunit/git/qunit.js"></script>
+		<!-- Our lessons -->
+		<script src="js/lessons.js"></script>
+		<script>
+		$(document).ready(function() {
+			for (var i in lessons) {
+				// Set the module to whatever the lesson is
+				module(lessons[i].title, {
+					lesson: lessons[i]
+				});
+				
+				test('Test pass', function() {
+					// Test everything that should pass
+					for (var j in this.lesson.pass) {
+						var input = this.lesson.pass[j];
+						ok(this.lesson.valid(input), input + ' should have passed.');
+					}
+				});
+
+				test('Test fail', function() {
+					// Test everything that shouldn't pass
+					for (var j in this.lesson.fail) {
+						var input = this.lesson.fail[j];
+						ok(!this.lesson.valid(input), input + ' should not pass.');
+					}	
+				});
+			}
+		});
+		</script>
+	</head>
+	<body>
+		<h1 id="qunit-header">QUnit example</h1>
+		<h2 id="qunit-banner"></h2>
+		<div id="qunit-testrunner-toolbar"></div>
+		<h2 id="qunit-userAgent"></h2>
+		<ol id="qunit-tests"></ol>
+		<div id="qunit-fixture">test markup, will be hidden</div>
+	</body>
+</html>

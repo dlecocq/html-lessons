@@ -3,6 +3,12 @@ var HTMLessons = Object({
 	current : 0,
 	
 	initialize : function() {
+		// First things first, make the buttons
+		$('#submit_button').button().click(function() { return false; });
+		$('#reveal_button').button().click(function() { return false; });
+		$('#advance_button').button().click(function() { HTMLessons.advance(); });
+		
+		// Now figure out what lesson we're on
 		var lesson = location.hash;
 		if (lesson.length == 0) {
 			HTMLessons.current = 0;
@@ -39,24 +45,39 @@ var HTMLessons = Object({
 	displayLesson : function(number) {
 		var lesson = lessons[number];
 		// Pre-fill the input space with the provided input
-		$('#input').val(lesson.input);
+		Editor.set(lesson.input);
 		// And display the description
-		$('#lesson_container').html(lesson.description);
+		$('#lesson_message').html(lesson.description);
 		// And update the title
 		HTMLessons.setTitle(lesson.title);
+		// Hide the done buttons, and show the working buttons
+		$('#done_buttons').hide();
+		$('#working_buttons').show();
+		// Hide any preview
+		Editor.set(lesson.input);
+		Editor.preview();
 	},
 	
+	// This checks whether or not the submission is correct
 	checkLesson : function() {
 		var lesson = lessons[HTMLessons.current];
-		var input  = $('#input').val();
-		if (lesson.valid(input)) {
+		var input  = Editor.get();
+		if (lesson.valid($(input))) {
 			HTMLessons.onLessonCorrect();
 		} else {
 			HTMLessons.onLessonError();
 		}
 		
-		// And lastly, set the results element to have the provided content
-		$('#results').html(input);
+		Editor.preview();
+	},
+	
+	// This reveals one possible solution to the problem.
+	revealSolution : function() {
+		var lesson = lessons[HTMLessons.current];
+		if (lesson.solution) {
+			Editor.set(lesson.solution);	
+		}
+		HTMLessons.onLessonRevealed();
 	},
 	
 	/* Callbacks
@@ -67,10 +88,16 @@ var HTMLessons = Object({
 	 * of the lessons
 	 */
 	
+	// This is called when a lesson has its solution revealed
+	onLessonRevealed : function() {
+		
+	},
+	
 	// This is called when a lesson is correctly finished
 	onLessonCorrect : function() {
 		alert('Correct!');
-		HTMLessons.advance();
+		$('#working_buttons').hide();
+		$('#done_buttons').show();
 	},
 	
 	// This is called when a lesson is incorrectly finished

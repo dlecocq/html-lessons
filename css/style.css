@@ -1,5 +1,22 @@
+/* Overall container */
 #container {
 	width: 90%;
+}
+
+/* Our preview */
+#preview {
+	clear: both;
+}
+
+/* The lesson description and buttons */
+#lesson_container {
+	float: right;
+	width: 55%;
+}
+
+/* Our editor */
+#input {
+	width: 100%;
 }
 
 #input_container {
@@ -7,11 +24,17 @@
 	width: 40%;
 }
 
-#lesson_container {
-	float: right;
-	width: 60%;
+#markItUpinput {
+	background-color: green;
+	width: 100%;
 }
 
-#results {
-	
+div.markItUpContainer {
+	background-color: green;
+	width: 100%;
+}
+
+/* Buttons */
+#done_buttons {
+	display: none;
 }
