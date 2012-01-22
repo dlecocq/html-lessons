@@ -4,8 +4,6 @@ var Editor = Object({
 	initialize: function() {
 		Editor.markitup = $('#input').markItUp({
 			nameSpace         : 'html',
-		    onShiftEnter      : { keepDefault:false, replaceWith:'<br />\n' },
-		    onCtrlEnter       : { keepDefault:false, openWith:'\n<p>', closeWith:'</p>\n' },
 		    onTab             : { keepDefault:false, openWith:'    ' },
 		    markupSet         : []
 		});
