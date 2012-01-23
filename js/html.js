@@ -51,8 +51,7 @@ var HTMLessons = Object({
 		// And update the title
 		HTMLessons.setTitle(lesson.title);
 		// Hide the done buttons, and show the working buttons
-		$('#done_buttons').hide();
-		$('#working_buttons').show();
+		$('#advance_button').button('disable');
 		// Hide any preview
 		Editor.set(lesson.input);
 		Editor.preview();
@@ -96,8 +95,7 @@ var HTMLessons = Object({
 	// This is called when a lesson is correctly finished
 	onLessonCorrect : function() {
 		alert('Correct!');
-		$('#working_buttons').hide();
-		$('#done_buttons').show();
+		$('#advance_button').button('enable');
 	},
 	
 	// This is called when a lesson is incorrectly finished

@@ -8,8 +8,6 @@
 		<!-- Styling for the editor -->
 		<link rel="stylesheet" type="text/css" href="markitup/skins/markitup/style.css" />
 		<link rel="stylesheet" type="text/css" href="markitup/sets/html/style.css" />
-		<!-- This is the preview style -->
-		<!--<link rel="stylesheet" type="text/css" href="~/templates/preview.css" />-->
 		
 		<!-- Javascript -->
 		<script src="js/editor.js"></script>
@@ -32,28 +30,32 @@
 		</script>
 	</head>
 	<body>
-		<div id='container'>
-			<!-- The input container holds where the user does his/her work -->
-			<div id='input_container'>
-				<textarea id='input' cols='50'></textarea>
-			</div>
-			
-			<!-- The lesson container is where the lesson itself is shown -->
-			<div id='lesson_container'>
-				<div id='lesson_message'></div>
-				<div id='buttons'>
-					<!-- These buttons are visible when working a problem -->
-					<div id='working_buttons'>
-						<a id='submit_button'>Submit</a>
-						<a id='reveal_button'>Give Up</a>
-					</div>
-					<div id='done_buttons'>
-						<a id='advance_button'>Next Lesson</a>
-					</div>
-				</div>
+		<div id='header'>
+			<div id='logo'>
+				HTMLessons
+				<!--<img src='img/htmlessons.png' height='100px'/>-->
 			</div>
 		</div>
+		<div id='container'>
+			<div id='work_container'>
+				<!-- The input container holds where the user does his/her work -->
+				<div id='input_container'>
+					<textarea id='input' cols='50'></textarea>
+				</div>
+			
+				<!-- The lesson container is where the lesson itself is shown -->
+				<div id='lesson_container'>
+					<div id='buttons'>
+						<!-- These buttons are visible when working a problem -->
+						<a id='submit_button'>Submit</a>
+						<a id='reveal_button'>Give Up</a>
+						<a id='advance_button'>Next Lesson</a>
+					</div>
+					<div id='lesson_message'></div>
+				</div>
+			</div>
+			<div id='preview'></div>
+		</div>
 		<!-- This is where the fruit of your labor is displayed -->
-		<div id='preview'></div>
 	</body>
 </html>

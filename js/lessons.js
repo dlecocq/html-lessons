@@ -308,7 +308,7 @@ HTML also provides a way to express superscript and subscripts. As \
 you might expect, their names are 'sup' (meaning 'superscript') and\
  'sub' (meaning 'subscript'). Make the 'time=t' a subscript, and   \
 the '2' a superscript.",
-	input       : '<p>V time=t = g &times; t &times; 2</p>',
+	input       : '<p>V time=t = g &times; t2</p>',
 	solution    : '<p>V <sub>time=t</sub> = g &times; t &times; <sup>2</sup></p>',
 	pass        : [],
 	fail        : [],

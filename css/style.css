@@ -1,17 +1,71 @@
+/* 
+	The Dark Orange : e44d26
+	The Light Orange: f16529
+*/
+/* Header */
+#logo {
+	height: 100px;
+	font-size: 80px;
+	font-variant: small-caps;
+	font-family: verdana,sans-serif;
+	font-weight: bold;
+	color: beige;
+	background: black;
+	/*background: #e44d26; /* Old browsers */
+	/*background: -webkit-radial-gradient(center, ellipse cover, #1e5799 0%,#f16529 50%,#76230d 100%);  Chrome10+,Safari5.1+*/ 
+}
+
+body {
+	background  : black;
+	margin-left : 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+
+#hr {
+	background-color: #f16529;
+	height: 10px;
+}
+
 /* Overall container */
 #container {
-	width: 90%;
+	background: -webkit-linear-gradient(top, #76230d 0%, #f16529 50%, #76230d 100%);
+	margin      : 5px;
+	margin-left : 0px;
+	margin-right: 0px;
+	padding-bottom: 0px;
+	padding     : 10px;
+	height      : 100%;
+	font-family : verdana;
 }
 
 /* Our preview */
 #preview {
 	clear: both;
+	background-color: beige;
+	padding: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
+/* Our MarkItUp Customizations */
+div#markItUpInput.markItUp {
+	padding: 0px;
+	border-style: none;
+}
+
+div.markItUpContainer {
+	padding: 0px;
 }
 
 /* The lesson description and buttons */
 #lesson_container {
 	float: right;
-	width: 55%;
+	width: 40%;
+	padding: 10px;
+	background-color: beige;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
 }
 
 /* Our editor */
@@ -21,7 +75,7 @@
 
 #input_container {
 	float: left;
-	width: 40%;
+	width: 57%;
 }
 
 #markItUpinput {
@@ -35,6 +89,18 @@ div.markItUpContainer {
 }
 
 /* Buttons */
+.disabled {
+	background-color: grey;
+}
+
+#buttons {
+	text-align: center;
+	padding: 10px;
+}
+
 #done_buttons {
 	display: none;
+}
+
+#working_buttons {
 }
