@@ -50,17 +50,20 @@ with their corresponding symbols.</p>\
 	valid       : function(input) {
 		var item = $(input);
 		var tests = ['&times;', '&lt;', '&gt;', '&amp;'];
-		item.each(function(i, obj) {
+		for (var index in tests) {
 			var found = false;
-			for (var index in tests) {
-				if ($(obj).text().indexOf($('<p>' + tests[index] + '</p>')) > 0) {
+			item.filter('p').each(function(i, obj) {
+				var html = $(obj).text();
+				var encoded = $('<p>' + tests[index] + '</p>').text();
+				if (html.indexOf(encoded) > 0) {
 					found = true;
+					return true;
 				}
-			}
+			});
 			if (!found) {
 				return false;
 			}
-		});
+		}
 		return true;
 	}
 }));
