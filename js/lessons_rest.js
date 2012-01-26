@@ -6,50 +6,6 @@ clerk, the undertaker, and the chief mourner. Scrooge signed it.   \
 And Scrooge's name was good upon 'Change, for anything he chose to \
 put his hand to.</p>";
 
-// This is an introduction to links
-lessons.push(Object({
-	title       : 'Links All Around!',
-	description : "\
-As a user of the internet, you are probably aware of the fact that \
-aside from being a series of tubes, links provide a way to refer to\
- other web pages. Links are described with the 'a' (meaning        \
-'anchor') tag, and the url they point to is described with the     \
-'href' attribute. Whatever appears between the start anchor tag and\
- the end tag is a clickable link. Make this link point to your     \
-favorite website.",
-	input       : '<a href="">My Favorite Site</a>',
-	solution    : '<a href="http://stackoverflow.com">My Favorite Site</a>',
-	pass        : [
-		'<a href="foo">bar</a>',
-		'<a id="howdy" href="foo">bar</a>'],
-	fail        : [
-		'<a href="">Site</a>',
-		'<p>Nope</p>',
-		'<a src="foo">howdy</a>'],
-	valid       : function(input) {
-		var item = $(input);
-		return item.is('a') && item.attr('href') != '';
-	}
-}));
-
-// Images
-lessons.push(Object({
-	title       : 'Pretty Pretty Pictures!',
-	description : "\
-You've probably also noticed that the internet is a good place for \
-images, and as you may have guessed, there's a tag for that. The   \
-'img' tag is that tag. Its 'src' (meaning 'source') attribute      \
-points to the URL for the image you want to display. Like the 'hr' \
-tag, the 'img' tag is self-closing. For example, make this img tag \
-show the picture at (INSERT URL HERE, BELOW)",
-	input       : '<img src="" />',
-	solution    : '<img src="" />',
-	valid       : function(input) {
-		var item = $(input);
-		return item.is('img') && item.attr('src') != '';
-	}
-}));
-
 // Height and Width of images
 lessons.push(Object({
 	title       : 'Squish and Stretch',
