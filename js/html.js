@@ -8,6 +8,8 @@ var HTMLessons = Object({
 		$('#reveal_button').button().click(function() { return false; });
 		$('#advance_button').button().click(function() { HTMLessons.advance(); });
 		
+		$('#editor_radio').buttonset();
+		
 		// Now figure out what lesson we're on
 		var lesson = location.hash;
 		if (lesson.length == 0) {
@@ -49,6 +51,7 @@ var HTMLessons = Object({
 		// And display the description
 		$('#lesson_message').html(lesson.description);
 		// And update the title
+		$('#lesson_title').text(lesson.title);
 		HTMLessons.setTitle(lesson.title);
 		// Hide the done buttons, and show the working buttons
 		$('#advance_button').button('disable');

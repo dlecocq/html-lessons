@@ -1,16 +1,14 @@
 var Editor = Object({
-	markitup : null,
+	editor : null,
 	
 	initialize: function() {
-		Editor.markitup = $('#input').markItUp({
-			nameSpace         : 'html',
-		    onTab             : { keepDefault:false, openWith:'    ' },
-		    markupSet         : []
-		});
-		
-		// Set the timeout so that the preview updates periodically
-		$('#input').keyup(function() {
-			Editor.preview();
+		Editor.editor = CodeMirror.fromTextArea($('#input')[0], {
+			value: 'hello!',
+			mode: 'htmlmixed',
+			lineNumbers: true,
+			onChange: function(editor, opts) {
+				Editor.preview();
+			}
 		});
 		
 		// The button to turn it in
@@ -26,17 +24,17 @@ var Editor = Object({
 	
 	// Get the contents of the editor
 	get: function() {
-		return $('#input').val();
+		return Editor.editor.getValue();
 	},
 	
 	// Set the contents of the editor
 	set: function(t) {
-		$('#input').val(t);
+		Editor.editor.setValue(t);
 	},
 	
 	// Show a preview of our code
 	preview: function() {
-		$('#preview').html($('#input').val()).show();
+		$('#preview').html(Editor.get()).show();
 	},
 	
 	// Hide said preview

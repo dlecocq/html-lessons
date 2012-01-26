@@ -1,25 +1,35 @@
 <html>
 	<head>
 		<title>Learn HTML</title>
+		<!-- Styling for jQuery UI -->
+		<link rel="stylesheet" href="css/jquery-ui.css" type="text/css" media="all">
+		<!-- Styling for the editor -->
+		<link rel="stylesheet" type="text/css" href="css/codemirror.css" />
+		<!--<link rel="stylesheet" type="text/css" href="css/theme/neat.css" />-->
 		<!-- Styling -->
 		<link rel="stylesheet" href="css/style.css">
-		<!-- Styling for jQuery UI -->
-		<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.17/themes/base/jquery-ui.css" type="text/css" media="all">
-		<!-- Styling for the editor -->
-		<link rel="stylesheet" type="text/css" href="markitup/skins/markitup/style.css" />
-		<link rel="stylesheet" type="text/css" href="markitup/sets/html/style.css" />
 		
 		<!-- Javascript -->
 		<script src="js/editor.js"></script>
 		<script src="js/lessons.js"></script>
+		<!-- Unit 1 -->
+		<script src="js/units/1/01-hello-world.js"></script>
+		<script src="js/units/1/02-headers.js"></script>
+		<script src="js/units/1/03-attributes.js"></script>
+		<script src="js/units/1/04-self-closing.js"></script>
+		<script src="js/units/1/05-html-entities.js"></script>
+		<script src="js/lessons_rest.js"></script>
 		<script src="js/html.js"></script>
 		<!-- jQuery! -->
 		<!--<script src="js/jquery.js"></script>-->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery-ui.min.js"></script>
 		<!-- JS for the editor -->
-		<script type="text/javascript" src="markitup/jquery.markitup.js"></script>
-		<script type="text/javascript" src="markitup/sets/html/set.js"></script>
+		<script type="text/javascript" src="js/codemirror.js"></script>
+		<script type="text/javascript" src="js/javascript/javascript.js"></script>
+		<script type="text/javascript" src="js/htmlmixed/htmlmixed.js"></script>
+		<script type="text/javascript" src="js/css/css.js"></script>
+		<script type="text/javascript" src="js/xml/xml.js"></script>
 		
 		<!-- Initialization -->
 		<script>
@@ -30,31 +40,59 @@
 		</script>
 	</head>
 	<body>
-		<div id='header'>
-			<div id='logo'>
+		<div id='header' class='full-width row'>
+			<div id='logo' class='left'>
 				HTMLessons
 				<!--<img src='img/htmlessons.png' height='100px'/>-->
 			</div>
-		</div>
-		<div id='container'>
-			<div id='work_container'>
-				<!-- The input container holds where the user does his/her work -->
-				<div id='input_container'>
-					<textarea id='input' cols='50'></textarea>
+			<div id='header_buttons' class='right large-half'>
+				<div class='right'>
+					<div class='button left'><a href='units.html'>Units</a></div>
+					<div class='button left'><a href='progress.html'>Progress</a></div>
+					<div class='button left'><a href='badges.html'>Badges</a></div>
 				</div>
+			</div>
+		</div>
+		
+		<div id='container'>
+			<div id='unit_title_bar' class='full-width row'>
+				<div id='unit_title' class='left'></div>
+				<div id='badging' class='right'></div>
+			</div>
 			
-				<!-- The lesson container is where the lesson itself is shown -->
-				<div id='lesson_container'>
-					<div id='buttons'>
-						<!-- These buttons are visible when working a problem -->
+			<div id='lesson_title_bar' class='full-width row'>
+				<div id='lesson_title' class='left small-half'></div>
+				<div id='lesson_buttons' class='right large-half'>
+					<div class='left'>
 						<a id='submit_button'>Submit</a>
 						<a id='reveal_button'>Give Up</a>
 						<a id='advance_button'>Next Lesson</a>
 					</div>
-					<div id='lesson_message'></div>
+					<div id='editor_radio' class='right'>
+						<input type="radio" id="lesson_radio" checked="checked" name="radio"/><label for="lesson_radio">Lesson</label>
+						<input type="radio" id="search_toggle" name="radio"/><label for="search_toggle">Scratch</label>
+					</div>
 				</div>
 			</div>
-			<div id='preview'></div>
+			
+			<div id='work_container' class='full-width row'>
+				<!-- The lesson container is where the lesson itself is shown -->
+				<div id='lesson_container' class='left small-half'>
+					<div id='lesson_message' class='cm-s-default'></div>
+				</div>
+				
+				<!-- The input container holds where the user does his/her work -->
+				<div id='input_container' class='light-border right large-half'>
+					<textarea id='input'></textarea>
+				</div>
+			</div>
+			
+			<div id='results_container' class='full-width row'>
+				<!-- And this is where the explanation, if any, will go -->
+				<div id='explanation' class='left small-half'></div>
+				<!-- This is where the preview of your work will go -->
+				<div id='preview' class='light-border right large-half'></div>
+			</div>
 		</div>
 		<!-- This is where the fruit of your labor is displayed -->
 	</body>
