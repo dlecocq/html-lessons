@@ -1,29 +1,3 @@
-var input = "<h1>The Main Section</h1>\n\
-<h2>Subsection</h2><p><a href='a.html'>Page 1</a><br/>\
-<a href='b.html'>Page 2</a></p>\n\n\
-<!-- This means the same as above, but is easier to read -->\n\
-<h2>Subsection</h2>\n\
-  <!-- These pages talk about Foo -->\n\
-  <p>\n\
-    <a href='c.html'>Page 3</a>\n\
-	<br/><a href='d.html'>Page 4</a>\n\
-  </p>";
-
-var solution = "<h1>The Main Section</h1>\n\
-<h2>Subsection</h2>\n\
-  <!-- These pages talk about Bar -->\n\
-  <p>\n\
-    <a href='a.html'>Page 1</a><br/>\n\
-    <a href='b.html'>Page 2</a>\n\
-  </p>\n\n\
-<!-- This means the same as above, but is easier to read -->\n\
-<h2>Subsection</h2>\n\
-  <!-- These pages talk about Foo -->\n\
-  <p>\n\
-    <a href='c.html'>Page 3</a>\n\
-	<br/><a href='d.html'>Page 4</a>\n\
-  </p>";
-
 // HTML Comments
 lessons.push(Object({
 	title       : 'No Comment?',
@@ -48,13 +22,35 @@ the difference in how readable the bottom portion of code is compared \
 to the top, and then move the tags around and add a comment to mimic \
 the styling of the rest.</p>",
 
-	input       : input,
+	input       : "<h1>The Main Section</h1>\n\
+<h2>Subsection</h2><p><a href='a.html'>Page 1</a><br/>\
+<a href='b.html'>Page 2</a></p>\n\n\
+<!-- This means the same as above, but is easier to read -->\n\
+<h2>Subsection</h2>\n\
+  <!-- These pages talk about Foo -->\n\
+  <p>\n\
+    <a href='c.html'>Page 3</a>\n\
+	<br/><a href='d.html'>Page 4</a>\n\
+  </p>",
 
-	solution    : solution,
+	solution    : "<h1>The Main Section</h1>\n\
+<h2>Subsection</h2>\n\
+  <!-- These pages talk about Bar -->\n\
+  <p>\n\
+    <a href='a.html'>Page 1</a><br/>\n\
+    <a href='b.html'>Page 2</a>\n\
+  </p>\n\n\
+<!-- This means the same as above, but is easier to read -->\n\
+<h2>Subsection</h2>\n\
+  <!-- These pages talk about Foo -->\n\
+  <p>\n\
+    <a href='c.html'>Page 3</a>\n\
+	<br/><a href='d.html'>Page 4</a>\n\
+  </p>",
   	
-	pass        : [input],
+	pass        : [],
 	
-	fail        : [solution],
+	fail        : [],
 	
 	valid       : function(input) {
 		var item = $(input);
