@@ -1,11 +1,3 @@
-// This is a snippet from Charles Dickens' "A Christmas Carol"
-var dickens = "<h1>Chapter 1</h1>\n\
-<p>Marley was dead: to begin with. There is no doubt whatever about\
-that. The register of his burial was signed by the clergyman, the  \
-clerk, the undertaker, and the chief mourner. Scrooge signed it.   \
-And Scrooge's name was good upon 'Change, for anything he chose to \
-put his hand to.</p>";
-
 // Height and Width of images
 lessons.push(Object({
 	title       : 'Squish and Stretch',
@@ -47,28 +39,6 @@ of their carnal embrace<br/>\n\
 had a damn near infinite slope!</p>",
 	valid       : function(input) {
 		return $(input).children('br').length > 0;
-	}
-}));
-
-// HTML Comments
-lessons.push(Object({
-	title       : 'No Comment?',
-	description : "\
-Comments are an important way to improve readability. You may not  \
-think that so little could be so helpful, but once you work on HTML\
- with another programmer, you'll understand. Or if you don't work  \
-on a project for even a couple of weeks, it's easy to forget what  \
-one dense cluster of markup does. Comments do not affect how a     \
-document is parsed. Anything between '&lt;!--' and '--&gt;' is     \
-considered a comment. Add a comment above the following snippet to \
-indicate that it's the beginning of a chapter.",
-	input       : dickens,
-	solution    : '<!-- Chapter 1 -->\n' + dickens,
-	pass        : [],
-	fail        : [],
-	valid       : function(input) {
-		// This... is deep magic
-		return $(input).contents().filter(function(){ return this.nodeType == 8; }).length > 0;
 	}
 }));
 
