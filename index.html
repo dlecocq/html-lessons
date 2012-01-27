@@ -22,6 +22,7 @@
 		<script src="js/units/2/01-links.js"></script>
 		<script src="js/units/2/02-images.js"></script>
 		<script src="js/units/2/03-paths.js"></script>
+		<script src="js/units/2/04-comments.js"></script>
 		<script src="js/lessons_rest.js"></script>
 		<script src="js/html.js"></script>
 		<!-- jQuery! -->
@@ -83,19 +84,19 @@
 				<!-- The lesson container is where the lesson itself is shown -->
 				<div id='lesson_container' class='left small-half'>
 					<div id='lesson_message' class='cm-s-default'></div>
+					<!-- And this is where the explanation, if any, will go -->
+					<div id='explanation' ></div>
 				</div>
 				
 				<!-- The input container holds where the user does his/her work -->
 				<div id='input_container' class='light-border right large-half'>
 					<textarea id='input'></textarea>
+					<!-- This is where the preview of your work will go -->
+					<div id='preview' class='light-border'></div>
 				</div>
 			</div>
 			
 			<div id='results_container' class='full-width row'>
-				<!-- And this is where the explanation, if any, will go -->
-				<div id='explanation' class='left small-half'></div>
-				<!-- This is where the preview of your work will go -->
-				<div id='preview' class='light-border right large-half'></div>
 			</div>
 		</div>
 		<!-- This is where the fruit of your labor is displayed -->
