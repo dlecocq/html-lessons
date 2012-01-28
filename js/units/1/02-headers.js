@@ -11,9 +11,12 @@ or subscection of a page.</p>\
 largest and most important, and <span class='cm-tag'>h6</span> being the \
 smallest and least important. You can think of <span class='cm-tag'>h1</span> \
 tags being the units of text book, and <span class='cm-tag'>h2</span>s \
-being lessons, <span class='cm-tag'>h3</span>s being lessons, and so on.</p>\
+being lessons, <span class='cm-tag'>h3</span>s being lessons, and so on.\
+It's important to note that there are other ways than headers to change the \
+size of your font. Headers carry the added meaning of identifying a section, \
+so they should only be used for that purpose.</p>\
 \
-<p>Experiment with changing the text of these headers, and adding your own</p>",
+<p>Experiment with changing the text of these headers, and adding your own.</p>",
 	input       : '<h1></h1>\n<h2></h2>',
 	
 	solution    : '<h1>Unit 1</h1>\n\
