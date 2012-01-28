@@ -3,12 +3,25 @@
 	<head>
 		<!-- Include jQuery -->
 		<!--<script src="js/jquery.js"></script>-->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script src="js/jquery.min.js"></script>
 		<!-- qUnit-specific stuff -->
 		<link rel="stylesheet" href="http://code.jquery.com/qunit/git/qunit.css" type="text/css" media="screen" />
 		<script type="text/javascript" src="http://code.jquery.com/qunit/git/qunit.js"></script>
 		<!-- Our lessons -->
 		<script src="js/lessons.js"></script>
+		<!-- Unit 1 -->
+		<script src="js/units/1/01-hello-world.js"></script>
+		<script src="js/units/1/02-headers.js"></script>
+		<script src="js/units/1/03-attributes.js"></script>
+		<script src="js/units/1/04-self-closing.js"></script>
+		<script src="js/units/1/05-html-entities.js"></script>
+		<!-- Unit 2 -->
+		<script src="js/units/2/01-links.js"></script>
+		<script src="js/units/2/02-images.js"></script>
+		<script src="js/units/2/03-paths.js"></script>
+		<script src="js/units/2/04-comments.js"></script>
+		<script src="js/lessons_rest.js"></script>
+		
 		<script>
 		$(document).ready(function() {
 			for (var i in lessons) {
@@ -21,8 +34,15 @@
 					// Test everything that should pass
 					for (var j in this.lesson.pass) {
 						var input = this.lesson.pass[j];
-						ok(this.lesson.valid(input), input + ' should have passed.');
+						ok(this.lesson.valid(input), input + ' should pass.');
 					}
+				});
+				
+				test('Test solution, input', function() {
+					var input = this.lesson.solution;
+					ok(this.lesson.valid(input), input + ' should pass.');
+					input = this.lesson.input;
+					ok(!this.lesson.valid(input), input + ' should not pass.');
 				});
 
 				test('Test fail', function() {

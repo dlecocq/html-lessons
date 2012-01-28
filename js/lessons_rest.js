@@ -17,53 +17,6 @@ image way too wide or too narrow?",
 	}
 }));
 
-// Breaks
-lessons.push(Object({
-	title       : 'Take a Break!',
-	description : "\
-HTML doesn't car about tabs, or newlines. You should use this fact \
-to your advantage to style your code to make it easier to read.    \
-However, what if you <em>want</em> a line break in the middle of   \
-some text? You can use the 'br' (meaning 'break') tag to add a     \
-single new line. Put in line breaks between the lines of this      \
-limmerick to format it correctly",
-	input       : "<p>There once was a man named Pope,\n\
-who plugged into an oscilloscope.\n\
-The cyclical trace\n\
-of their carnal embrace\n\
-had a damn near infinite slope!</p>",
-	solution    : "<p>There once was a man named Pope,<br/>\n\
-who plugged into an oscilloscope.<br/>\n\
-The cyclical trace<br/>\n\
-of their carnal embrace<br/>\n\
-had a damn near infinite slope!</p>",
-	valid       : function(input) {
-		return $(input).children('br').length > 0;
-	}
-}));
-
-// Strong and bold
-lessons.push(Object({
-	title       : 'Fortune Favors the Bold',
-	description : "\
-Boring text is boring. Sometimes you want to draw attention to a   \
-particular <strong>word</strong> or words, by emboldening them. For\
- this, you can use the 'b' (meaning 'bold') tag or the 'strong'    \
-tag. Whatever text appears between the start and end tag will be   \
-turned bold, but nothing else. (There is a difference between 'b'  \
-and strong. The 'b' tag always means 'bold,' and usually 'strong'  \
-gets rendered as boldface, but it doesn't have to. Browsers decide \
-how they want to draw attention to the word.) Use the 'strong' tag \
-to emphasize the word 'emphasis'.",
-	input       : '<p>Sometimes the right emphasis is important</p>',
-	solution    : '<p>Sometimes the right <strong>emphasis</strong> is important</p>',
-	pass        : [],
-	fail        : [],
-	valid       : function(input) {
-		return $(input).children('strong').text().match(/\W*emphasis\W*/);
-	}
-}));
-
 // Italics
 lessons.push(Object({
 	title       : 'Tags Taste M-Italic',
