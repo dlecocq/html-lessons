@@ -17,45 +17,6 @@ image way too wide or too narrow?",
 	}
 }));
 
-// Italics
-lessons.push(Object({
-	title       : 'Tags Taste M-Italic',
-	description : "\
-Another common way to draw attention to words is with              \
-<em>italics</em>. Like boldface, there are two tags that can       \
-accomplish this for you: 'i' (meaning 'italics') and 'em' (meaning \
-'emphasis'). And like boldface, 'i' always renders as italics, and \
-'em' leaves the decision up to the browser. Use 'em' to make the   \
-phrase 'very useful'.",
-	input       : '<p>Used correctly, italics can be very useful.</p>',
-	solution    : '<p>Used correctly, italics can be <em>very useful</em>.</p>',
-	pass        : [],
-	fail        : [],
-	valid       : function(input) {
-		return $(input).children('em').text().match(/\W*very useful\W*/);
-	}
-}));
-
-// Sub and sup
-lessons.push(Object({
-	title       : 'Sup-er Text',
-	description : "\
-HTML also provides a way to express superscript and subscripts. As \
-you might expect, their names are 'sup' (meaning 'superscript') and\
- 'sub' (meaning 'subscript'). Make the 'time=t' a subscript, and   \
-the '2' a superscript.",
-	input       : '<p>V time=t = g &times; t2</p>',
-	solution    : '<p>V <sub>time=t</sub> = g &times; t &times; <sup>2</sup></p>',
-	pass        : [],
-	fail        : [],
-	valid       : function(input) {
-		var item = $(input);
-		var sub  = item.children('sub').text().match(/\W*time\s*\=\s*t\W*/);
-		var sup  = item.children('sup').text().match(/\s*2\s*/);
-		return sub && sup;
-	}
-}));
-
 // Various other formats
 lessons.push(Object({
 	title       : 'The Many Styles of Text',
