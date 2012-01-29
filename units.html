@@ -24,31 +24,48 @@
 		
 		<!-- Initialization -->
 		<script>
-			$(document).ready(function() {
-				var successes = Session.get('successes');
-				
-				for (var i in units) {
-					var unit = units[i];
-					var unitDiv = $('<div>').addClass('unit-container');
-					unitDiv.append($('<div>').addClass('unit-title').addClass('light-background').text(unit.title));
-					var lessons = $('<div>').addClass('unit-lessons-container');
-					for (var j in unit.lessons) {
-						var lesson = unit.lessons[j];
-						var lessonDiv = $('<div>').addClass('full-width row');
-						lessonDiv.append($('<div>').addClass('unit-lesson-title').text(lesson.title));
-						var d = $('<div>').addClass('unit-lesson-status');
-						if (successes[lesson.id] != null) {
-							d.addClass('unit-lesson-complete');
-						} else {
-							d.addClass('unit-lesson-incomplete');
-						}
-						lessonDiv.append(d);
-						lessons.append(lessonDiv);
-					}
-					unitDiv.append(lessons);
-					$('#container').append(unitDiv);
+		// This is the count of the lessons listed
+		var count     = 0;
+		var successes = [];
+		
+		var makeUnit = function(unit) {
+			var unitDiv = $('<div>').addClass('unit-container');
+			// Make tht title
+			var unitTitle = $('<div>').text(unit.title);
+			unitTitle.addClass('unit-title').addClass('light-background')
+			unitDiv.append(unitTitle);
+			// Make a container for the lessons
+			var lessons = $('<div>').addClass('unit-lessons-container');
+			for (var j in unit.lessons) {
+				var lesson = unit.lessons[j];
+				var lessonDiv = $('<div>').addClass('full-width row');
+				var title = $('<a>').text(lesson.title).attr('href', 'index.html#lesson' + count);
+				lessonDiv.append($('<div>').addClass('unit-lesson-title').append(title));
+				var d = $('<div>').addClass('unit-lesson-status');
+				if (successes[lesson.id] != null) {
+					d.addClass('unit-lesson-complete');
+				} else {
+					d.addClass('unit-lesson-incomplete');
 				}
-			});
+				lessonDiv.append(d);
+				lessons.append(lessonDiv);
+				count += 1;
+			}
+			unitDiv.append(lessons);
+			return unitDiv;
+		}
+		
+		$(document).ready(function() {
+			successes = Session.get('successes');
+			for (var i in units) {
+				if (i < Math.floor(units.length / 2)) {
+					$('#column-one').append(makeUnit(units[i]));
+				} else {
+					$('#column-two').append(makeUnit(units[i]));
+				}
+
+			}
+		});
 		</script>
 	</head>
 	<body>
@@ -67,18 +84,8 @@
 		</div>
 		
 		<div id='container'>
-			<!-- Here we'll display all the units -->
-			<!-- This is the unit template
-			<div class='unit-container'>
-				<div class='unit-title'></div>
-				<div id='lessons-container'>
-					<div id='lesson-template'>
-						<div class='lesson-title'></div>
-						<div class='lesson-status'></div>
-					</div>
-				</div>
-			</div>
-			-->
+			<div id='column-one' class='left half'></div>
+			<div id='column-two' class='right half'></div>
 		</div>
 	</body>
 </html>
