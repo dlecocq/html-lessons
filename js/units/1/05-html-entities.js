@@ -1,6 +1,7 @@
 // This is an introduction to links
-lessons.push(Object({
+addLesson(Object({
 	title       : 'HTML Entities',
+	id          : 'entities',
 	description : "<p>\
 By now you know how to render text in a paragraph, and that tags make \
 heavy use of symbols like &lt; and &gt;. So how do you make HTML display \

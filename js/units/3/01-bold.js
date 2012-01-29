@@ -1,6 +1,13 @@
+// Append this unit to the list of units
+addUnit({
+	title  : 'Getting Textual',
+	lessons: []
+});
+
 // Strong and bold
-lessons.push(Object({
+addLesson(Object({
 	title       : 'Fortune Favors the Bold',
+	id          : 'bold',
 	description : "<p>\
 Boring text is boring. Sometimes you want to draw attention to a   \
 particular word or words by emboldening them. To this end, HTML \

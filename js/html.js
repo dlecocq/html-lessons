@@ -65,12 +65,10 @@ var HTMLessons = Object({
 		var lesson = lessons[HTMLessons.current];
 		var input  = Editor.get();
 		if (lesson.valid($(input))) {
-			HTMLessons.onLessonCorrect();
+			HTMLessons.onLessonCorrect(lesson);
 		} else {
-			HTMLessons.onLessonError();
+			HTMLessons.onLessonError(lesson);
 		}
-		
-		Editor.preview();
 	},
 	
 	// This reveals one possible solution to the problem.
@@ -79,7 +77,7 @@ var HTMLessons = Object({
 		if (lesson.solution) {
 			Editor.set(lesson.solution);	
 		}
-		HTMLessons.onLessonRevealed();
+		HTMLessons.onLessonRevealed(lesson);
 	},
 	
 	/* Callbacks
@@ -91,18 +89,23 @@ var HTMLessons = Object({
 	 */
 	
 	// This is called when a lesson has its solution revealed
-	onLessonRevealed : function() {
+	onLessonRevealed : function(lesson) {
 		
 	},
 	
 	// This is called when a lesson is correctly finished
-	onLessonCorrect : function() {
+	onLessonCorrect : function(lesson) {
 		alert('Correct!');
 		$('#advance_button').button('enable');
+		var successes = Session.get('successes') || {};
+		if (successes[lesson.id] == null) {
+			successes[lesson.id] = true;
+			Session.set('successes', successes);
+		}
 	},
 	
 	// This is called when a lesson is incorrectly finished
-	onLessonError : function() {
+	onLessonError : function(lesson) {
 		alert('Nope, sorry!');
 	},
 	

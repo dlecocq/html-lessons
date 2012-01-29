@@ -1,6 +1,7 @@
 // Breaks
-lessons.push(Object({
+addLesson(Object({
 	title       : 'Take a Break!',
+	id          : 'break',
 	description : "<p>\
 Because HTML doesn't interpret the space between tags as text, it \
 has a tag to insert a new line in the middle of the paragraph. This, \

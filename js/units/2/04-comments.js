@@ -1,6 +1,7 @@
 // HTML Comments
-lessons.push(Object({
+addLesson(Object({
 	title       : 'No Comment?',
+	id          : 'comments',
 	description : "<p>\
 Normally, text in an HTML document gets rendered to the screen, but \
 it also provides a way for you to put \

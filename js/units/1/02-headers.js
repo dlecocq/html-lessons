@@ -1,6 +1,7 @@
 // This is an introduction to headers
-lessons.push(Object({
+addLesson(Object({
 	title       : 'Header? I Hardly Know Her!',
+	id          : 'headers',
 	description : "<p>\
 Paragraphs aren't the only types of text that HTML can display. There \
 are a number of <span class='cm-tag'>header</span> tags that display \

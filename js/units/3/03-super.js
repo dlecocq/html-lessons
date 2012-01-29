@@ -1,6 +1,7 @@
 // Sub and sup
-lessons.push(Object({
+addLesson(Object({
 	title       : 'A bird! A plane! Supertext!',
+	id          : 'supertext',
 	description : "<p>\
 Whether it's for exponents in mathematic expressions, or references, or for \
 footnotes, HTML provides a way to mark text in <sup>superscript</sup> \

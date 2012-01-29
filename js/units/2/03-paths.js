@@ -1,6 +1,7 @@
 // Paths
-lessons.push(Object({
+addLesson(Object({
 	title       : 'The Long and Winding Path',
+	id          : 'paths',
 	description : "<p>\
 Both images and links make use of URLs to identify their links and sources, \
 so we'll go through them in more detail. Let's look at the url \

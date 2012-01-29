@@ -1,7 +1,16 @@
+// Append this unit to the list of units
+addUnit({
+	title  : 'The Basics',
+	lessons: []
+});
+
 // This is the hello world lesson
-lessons.push(Object({
+addLesson(Object({
 	// This is the title of the particular lesson
 	title       : 'Hello World',
+	
+	// This is what it can be referred to as 
+	id          : 'hello',
 	
 	// This is the textual description of the particular lesson
 	description : "<p>\

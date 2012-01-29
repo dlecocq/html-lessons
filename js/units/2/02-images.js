@@ -1,6 +1,7 @@
 // Images
-lessons.push(Object({
+addLesson(Object({
 	title       : 'Pretty Pretty Pictures!',
+	id          : 'images',
 	description : "<p>\
 The internet would be a much duller place without images. The \
 <span class='cm-tag'>&lt;img&gt;</span> tag adds an image to your \

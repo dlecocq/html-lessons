@@ -45,8 +45,21 @@
 		<!-- Initialization -->
 		<script>
 			$(document).ready(function() {
-				Editor.initialize();
-				HTMLessons.initialize();
+				for (var i in units) {
+					var unit = units[i];
+					var unitDiv = $('<div>').addClass('unit-container');
+					unitDiv.append($('<div>').addClass('unit-title').addClass('light-background').text(unit.title));
+					var lessons = $('<div>').addClass('unit-lessons-container');
+					for (var j in unit.lessons) {
+						var lesson = unit.lessons[j];
+						var lessonDiv = $('<div>').addClass('full-width row');
+						lessonDiv.append($('<div>').addClass('unit-lesson-title').text(lesson.title));
+						lessonDiv.append($('<div>').addClass('unit-lesson-incomplete').addClass('unit-lesson-status'));
+						lessons.append(lessonDiv);
+					}
+					unitDiv.append(lessons);
+					$('#container').append(unitDiv);
+				}
 			});
 		</script>
 	</head>
@@ -66,47 +79,18 @@
 		</div>
 		
 		<div id='container'>
-			<div id='unit_title_bar' class='full-width row'>
-				<div id='unit_title' class='left'></div>
-				<div id='badging' class='right'></div>
-			</div>
-			
-			<div id='lesson_title_bar' class='full-width row'>
-				<div id='lesson_title' class='left small-half'></div>
-				<div id='lesson_buttons' class='right large-half'>
-					<div class='left'>
-						<a id='submit_button'>Submit</a>
-						<a id='reveal_button'>Give Up</a>
-						<a id='advance_button'>Next Lesson</a>
-					</div>
-					<div id='editor_radio' class='right'>
-						<input type="radio" id="lesson_radio" checked="checked" name="radio"/><label for="lesson_radio">Lesson</label>
-						<input type="radio" id="search_toggle" name="radio"/><label for="search_toggle">Scratch</label>
+			<!-- Here we'll display all the units -->
+			<!-- This is the unit template
+			<div class='unit-container'>
+				<div class='unit-title'></div>
+				<div id='lessons-container'>
+					<div id='lesson-template'>
+						<div class='lesson-title'></div>
+						<div class='lesson-status'></div>
 					</div>
 				</div>
 			</div>
-			
-			<div id='work_container' class='full-width row'>
-				<!-- The lesson container is where the lesson itself is shown -->
-				<div id='lesson_container' class='left small-half'>
-					<div id='lesson_message' class='cm-s-default'></div>
-					<!-- And this is where the explanation, if any, will go -->
-					<div id='explanation' ></div>
-				</div>
-				
-				<div class='right large-half'>
-					<!-- The input container holds where the user does his/her work -->
-					<div id='input_container' class='light-border full-width row'>
-						<textarea id='input'></textarea>
-					</div>
-					<!-- This is where the preview of your work will go -->
-					<div id='preview' class='light-border full-width row'></div>
-				</div>
-			</div>
-			
-			<div id='results_container' class='full-width row'>
-			</div>
+			-->
 		</div>
-		<!-- This is where the fruit of your labor is displayed -->
 	</body>
 </html>

@@ -1,6 +1,7 @@
 // Self-closing tags
-lessons.push(Object({
+addLesson(Object({
 	title       : 'There\'s No End!',
+	id          : 'self-closing',
 	description : "<p>\
 While most tags have both a start and an end tag, it's overkill for \
 certain elements. For example, there are tags to simply add a new line \

@@ -1,6 +1,7 @@
 // An introduction to attributes
-lessons.push(Object({
+addLesson(Object({
 	title       : 'Attributes',
+	id          : 'attributes',
 	description : "<p>\
 We've established that the type of a tag is specified with its name. \
 It's how we know a <span class='em-tag'>&lt;h1&gt;</span> is different \

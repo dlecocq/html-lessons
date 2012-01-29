@@ -1,6 +1,7 @@
 // Italics
-lessons.push(Object({
+addLesson(Object({
 	title       : 'Tags Taste M-Italic',
+	id          : 'italics',
 	description : "<p>\
 Another common way to draw attention to words is with <em>italics</em>. \
 Like with bold, there are two tags that accomplish this. There's the \

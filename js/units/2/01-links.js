@@ -1,6 +1,13 @@
+// Append this unit to the list of units
+addUnit({
+	title  : 'Fundamentals',
+	lessons: []
+});
+
 // This is an introduction to links
-lessons.push(Object({
+addLesson(Object({
 	title       : 'Links All Around!',
+	id          : 'links',
 	description : "<p>\
 In a lot of ways, links are the internet. They consist of a clickable \
 portion (usually text), and point to a new page, identified by a URL \
