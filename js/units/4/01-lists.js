@@ -8,14 +8,22 @@ addLesson(Object({
 	title       : 'Let Me List The Ways',
 	id          : 'lists',
 	description : "\
-Thus far, we've dealt mostly in text. Particularly, headers and    \
+<p>Thus far, we've dealt mostly in text. Particularly, headers and    \
 paragraphs. But the pallate becomes sophisticated rather quickly,  \
-and we need something more. This brings us to lists. Lists come in \
-both the ordered (each item has a number associated with it) and   \
-unordered varieties (each item is a bullet point). Ordered lists   \
-begin begin with the 'ol' tag, while their unordered counterparts  \
-begin with the 'ul' tag. Items in the list are identified by the   \
-'li' tag. Add an item to your grocery list and to-do list",
+and we need something more, which brings us to lists.</p>\
+<p>Lists begin with either the <span class='cm-tag'>&lt;ul&gt;</span> \
+tag, which makes an <span class='cm-tag'>u</span>nordered \
+<span class='cm-tag'>l</span>list with bullet points, or the \
+<span class='cm-tag'>&lt;ol&gt;</span> tag, which makes an \
+<span class='cm-tag'>o</span>rdered <span class='cm-tag'>l</span>ist with \
+numbers.</p>\
+<p>HTML elements can be <span class='definition'>nested</span>, meaning \
+that they can contain other HTML elements. In earlier lessons, you \
+nested an <span class='cm-tag'>&lt;a&gt;</span> tag inside of a paragraph, \
+for example. HTML lists contain many <span class='cm-tag'>&lt;li&gt;</span> \
+or <span class='cm-tag'>l</span>ist <span class='cm-tag'>i</span>tem tags \
+to represent each of the items in a list.</p>\
+<p>Add an item to your grocery list, and to your to-do list.</p>",
 
 	input       : "\
 <p>My Grocery List:\n\
