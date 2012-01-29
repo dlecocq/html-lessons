@@ -31,15 +31,23 @@ so they should only be used for that purpose.</p>\
 	
 	pass        : [
 		'<h1>Header</h1>',
-		'<h2>Header</h2>',
-		'<h1>Header</h1><h2></h2>'],
+		'<h2>Header</h2>'],
+	
 	fail        : [
 		'<p>Howdy</p>',
 		'<br/>',
-		'<a>What</a>'],
+		'<a>What</a>',
+		'<h1>Header</h1><h2></h2>'],
 	valid       : function(input) {
 		var item = $(input);
-		return item.text() != '' && (item.is('h1') || item.is('h2') ||
-			item.is('h3') || item.is('h4') || item.is('h5') || item.is('h6'));
+		var result = true;
+		var headers = item.filter('h1, h2, h3, h4, h5, h6');
+		headers.each(function(index, el) {
+			if ($(el).text() == '') {
+				result = false;
+				return false;
+			}
+		});
+		return result && headers.length > 0;
 	}
 }));

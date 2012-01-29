@@ -16,10 +16,12 @@ image way too wide or too narrow?",
 		return item.is('img') && (item.attr('width') != '' || item.attr('height') != '');
 	}
 }));
- 
+
+/* 
 // This is the format
 lessons.push(Object({
 	title       : '',
+	id          : '',
 	description : "\
 As a user of the internet, you are probably aware of the fact that \
 ",
@@ -31,3 +33,4 @@ As a user of the internet, you are probably aware of the fact that \
 		return false;
 	}
 }));
+*/

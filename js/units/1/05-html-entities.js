@@ -46,7 +46,7 @@ with their corresponding symbols.</p>\
 		'<p>example &rarr; your turn</p>\n\
 <p>2 &times; 5 = 10</p>\n\
 <p>2 &lt; 5 &gt; 3</p>\n\
-<p>Beans &amp; cornbread</p>'],
+<p>Beans (and) cornbread</p>'],
 	
 	valid       : function(input) {
 		var item = $(input);

@@ -28,8 +28,7 @@ it's an image or text. Make this link point to your favorite website.</p>",
 	
 	fail        : [
 		'<a href="">Site</a>',
-		'<p>Nope</p>',
-		'<a src="foo">howdy</a>'],
+		'<p>Nope</p>'],
 	
 	valid       : function(input) {
 		var item = $(input);
