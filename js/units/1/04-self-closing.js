@@ -6,8 +6,8 @@ addLesson(Object({
 While most tags have both a start and an end tag, it's overkill for \
 certain elements. For example, there are tags to simply add a new line \
 to text, or to draw a horizontal line as a divider. Since it wouldn't \
-make sense to put other content inside either of them, these tags are \
-<span class='em'>self-closing</span>.</p>\
+make sense to put other content inside either of them, these tags are called \
+<span class='em'>self-closing</span> tags.</p>\
 \
 <p>In place of an end tag, self-closing tags simply place a '/' at \
 the end of the the start tag. The <span class='cm-tag'>&lt;hr/&gt;</span> \
