@@ -23,13 +23,13 @@ But even so, this distinction is left up to the the browser that renders \
 the page. Use the <span class='cm-tag'>strong</span> tag to make the \
 word 'bold' appear as such.</p>",
 
-	input       : '<p>Fortune favors the bold.</p>\n\
+	input       : '<p>He was a bold man that first ate an oyster. - Jonathan Swift </p>\n\
 <p>That is a bold-faced lie!</p>\n\
-<p>Be bold!</p>',
+<p>Be bold, be bold, and everywhere be bold. -Herbert Spencer</p>',
 	
-	solution    : '<p>Fortune favors the <strong>bold</strong>.</p>\n\
+	solution    : '<p>He was a <strong>bold</strong> man that first ate an oyster. - Jonathan Swift </p>\n\
 <p>That is a <strong>bold</strong>-faced lie!</p>\n\
-<p>Be <strong>bold</strong>!</p>',
+<p>Be <strong>bold</strong>, be <strong>bold</strong>, and everywhere be <strong>bold</strong>. - Herbert Spencer</p>',
 
 	pass        : [],
 	
