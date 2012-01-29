@@ -10,21 +10,8 @@ var HTMLessons = Object({
 		
 		$('#editor_radio').buttonset();
 		
-		// Now figure out what lesson we're on
-		var lesson = location.hash;
-		if (lesson.length == 0) {
-			HTMLessons.current = 0;
-		} else {
-			// Match the first digit that you find in the location hash
-			lesson = lesson.match(/\d+/);
-			if (lesson.length > 0) {
-				HTMLessons.current = parseInt(lesson[0]);
-			} else {
-				HTMLessons.current = 0;
-			}
-		}
-		
-		HTMLessons.displayLesson(HTMLessons.current);
+		$(window).bind('hashchange', HTMLessons.checkURL);
+		HTMLessons.checkURL();
 	},
 	
 	// Advance to the next lesson
@@ -41,6 +28,23 @@ var HTMLessons = Object({
 	// Set the page's title
 	setTitle : function(title)  {
 		$("title").text('Learn HTML | ' + title);
+	},
+	
+	checkURL : function() {
+		// Now figure out what lesson we're on
+		var lesson = location.hash;
+		if (lesson.length == 0) {
+			HTMLessons.current = 0;
+		} else {
+			// Match the first digit that you find in the location hash
+			lesson = lesson.match(/\d+/);
+			if (lesson.length > 0) {
+				HTMLessons.current = parseInt(lesson[0]);
+			} else {
+				HTMLessons.current = 0;
+			}
+		}
+		HTMLessons.displayLesson(HTMLessons.current);
 	},
 	
 	// Display a particular lesson
@@ -107,6 +111,12 @@ var HTMLessons = Object({
 	// This is called when a lesson is incorrectly finished
 	onLessonError : function(lesson) {
 		alert('Nope, sorry!');
+	},
+	
+	// This is called when all the lessons for a unit have been 
+	// completed.
+	onUnitComplete : function(unit) {
+		
 	},
 	
 	// This is called when all the lessons have been finished
