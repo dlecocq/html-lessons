@@ -23,6 +23,6 @@ lessons:
 	--js units/4/02-nested-lists.js \
 	--js units/4/03-tables.js \
 	--js units/5/01-style.js \
-	--js units/5/02-style-tag.js \
-	--js units/5/03-classes.js \
-	--js units/5/04-more-styles.js
+	--js units/5/02-more-styles.js \
+	--js units/5/03-style-tag.js \
+	--js units/5/04-classes.js

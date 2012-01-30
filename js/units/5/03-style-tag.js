@@ -3,7 +3,7 @@ addLesson(Object({
 	title       : 'The Style Tag',
 	id          : 'style-tag',
 	description : "\
-Specifying the style attribute for each tag individually is not    \
+<p>As the last Specifying the style attribute for each tag individually is not    \
 tedious, but error-prone and difficult to change. For example, if  \
 you have 10 headers on your page, and you write styles for them,   \
 then decide you want to change the font used for each of them, you \
