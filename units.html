@@ -39,7 +39,7 @@
 			for (var j in unit.lessons) {
 				var lesson = unit.lessons[j];
 				var lessonDiv = $('<div>').addClass('full-width row');
-				var title = $('<a>').text(lesson.title).attr('href', 'index.html#lesson' + count);
+				var title = $('<a>').text(lesson.title).attr('href', 'learn.html#lesson' + count);
 				lessonDiv.append($('<div>').addClass('unit-lesson-title').append(title));
 				var d = $('<div>').addClass('unit-lesson-status');
 				if (successes[lesson.id] != null) {
