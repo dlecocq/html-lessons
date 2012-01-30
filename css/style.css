@@ -117,11 +117,6 @@ body {
 
 }
 
-/* Our preview */
-#preview > * {
-	margin: 10px;
-}
-
 /* The work area */
 /* The lesson description and buttons */
 #lesson_container {
@@ -136,12 +131,23 @@ body {
 
 /* Our editor */
 #input {
-
+	
 }
 
 #input_container {
-	float: right;
+	padding: 0px;
+	margin-bottom: 10px;
 }
+
+#preview {
+	padding: 0px;
+}
+
+/* Our preview */
+#preview > * {
+	margin: 10px;
+}
+
 
 /* Buttons */
 .success {

@@ -1,3 +1,8 @@
+var endMessage = "\
+That's all the lessons we have, for now! We hope you've \
+found this useful thus far, and we plan to have more lessons \
+soon!";
+
 var HTMLessons = Object({
 	// This is the lesson we're currently on
 	current : 0,
@@ -44,11 +49,19 @@ var HTMLessons = Object({
 				HTMLessons.current = 0;
 			}
 		}
+		
 		HTMLessons.displayLesson(HTMLessons.current);
 	},
 	
 	// Display a particular lesson
 	displayLesson : function(number) {
+		if (number > lessons.length) {
+			$('#lesson_title').text('That\'s All For Now!');
+			$('#lesson_message').text(endMessage);
+			Editor.set('<p>That\'s all, folks!</p>');
+			return;
+		}
+		
 		var lesson = lessons[number];
 		// Pre-fill the input space with the provided input
 		Editor.set(lesson.input);
