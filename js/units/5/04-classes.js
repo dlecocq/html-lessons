@@ -3,60 +3,94 @@ addLesson(Object({
 	title       : 'How Classy',
 	id          : 'classes',
 	description : "\
-Tags can all accept the 'class' attribute. It allows you to give   \
-some attribution to the type of tag it is, and is especially useful\
- with CSS. For example, suppose you have some paragraphs that are  \
-the opening paragraph in a sections, and you'd like to give them   \
-special treatment. You can't simply change the styling for         \
-<em>all</em> 'p' tags, but classes provide a logical grouping. A   \
-tag can have multiple classes, separated by spaces. Give these     \
-paragraphs alternating classes like the example.",
+<p>CSS includes a selector to find elements with a particular \
+<span class='cm-atom'>class</span> attribute. More specifically, \
+an element can have multiple classes in it's <span class='cm-atom'>\
+class</span>attribute, separated by spaces, and the CSS selector will \
+style all tags that have that class. In short, classes provide a way \
+of grouping elements together for styling purposes, beyond just their \
+particular tag.</p>\
+<p>At right, there is a table where all the even rows should have the \
+<span class='cm-atom'>background-color: </span>\
+<span class='cm-comment'>lightgray</span> style, and the odd rows should have \
+<span class='cm-atom'>background-color: </span>\
+<span class='cm-comment'>gray</span>. The <span class='cm-tag'>\
+.odd</span> selector in the <span class='cm-tag'>&lt;style&gt;</span> \
+tag will style all rows with 'odd' in its <span class='cm-atom'>class</span>, \
+and likewise the <span class='cm-tag'>.even</span> selector styles \
+all the rows marked as 'even.' This is commonly used to help users \
+track across long rows of data. Update the <span class='cm-tag'>\
+&lt;style&gt;</span> tag to set the appropriate background colors.</p>",
 
 	input       : "\
 <style>\n\
 .odd {\n\
-	background-color: lightgray;\n\
+  <!-- My background-color should be gray, or perhaps Earl Grey, hot -->\n\
 }\n\
 \n\
 .even {\n\
-	background-color: white;\n\
+  <!-- My background-color should be lightgray -->\n\
 }\n\
 </style>\n\
-<p>\n\
-<span class='odd'>'Twas brillig, and the slithy toves</span><br/>\n\
-<span class='even'>Did gyre and gimble in the wabe;</span><br/>\n\
-<span class='odd'>All mimsy were the borogoves,</span><br/>\n\
-<span class='even'>And the mome raths outgrabe.</span><br/>\n\
-</p><p>\n\
-<span>'Beware the Jabberwock, my son!</span><br/>\n\
-<span>The jaws that bite, the claws that catch!</span><br/>\n\
-<span>Beware the Jubjub bird, and shun</span><br/>\n\
-<span>The frumious Bandersnatch!</span></p>",
+<table>\n\
+  <tr class='odd'>\n\
+    <td>Jean-Luc</td><td>Picard</td>\n\
+  </tr><tr class='even'>\n\
+    <td>William</td><td>Riker</td>\n\
+  </tr><tr class='odd'>\n\
+    <td>Geordi</td><td>La Forge</td>\n\
+  </tr><tr class='even'>\n\
+    <td>Wesley</td><td>Crusher</td>\n\
+  </tr><tr class='odd'>\n\
+    <td>Deanna</td><td>Troi</td>\n\
+  </tr><tr class='even'>\n\
+    <td>Tasha</td><td>Yar</td>\n\
+  </tr>\n\
+</table>",
 
 	solution    : "\
 <style>\n\
 .odd {\n\
-	background-color: lightgray;\n\
+  background-color: gray;\n\
 }\n\
 \n\
 .even {\n\
-	background-color: white;\n\
+  background-color: lightgray;\n\
 }\n\
 </style>\n\
-<p>\n\
-<span class='odd'>'Twas brillig, and the slithy toves</span><br/>\n\
-<span class='even'>Did gyre and gimble in the wabe;</span><br/>\n\
-<span class='odd'>All mimsy were the borogoves,</span><br/>\n\
-<span class='even'>And the mome raths outgrabe.</span><br/>\n\
-</p><p>\n\
-<span class='odd'>'Beware the Jabberwock, my son!</span><br/>\n\
-<span class='even'>The jaws that bite, the claws that catch!</span><br/>\n\
-<span class='odd'>Beware the Jubjub bird, and shun</span><br/>\n\
-<span class='even'>The frumious Bandersnatch!</span></p>",
+<table>\n\
+  <tr class='odd'>\n\
+    <td>Jean-Luc</td><td>Picard</td>\n\
+  </tr><tr class='even'>\n\
+    <td>William</td><td>Riker</td>\n\
+  </tr><tr class='odd'>\n\
+    <td>Geordi</td><td>La Forge</td>\n\
+  </tr><tr class='even'>\n\
+    <td>Wesley</td><td>Crusher</td>\n\
+  </tr><tr class='odd'>\n\
+    <td>Deanna</td><td>Troi</td>\n\
+  </tr><tr class='even'>\n\
+    <td>Tasha</td><td>Yar</td>\n\
+  </tr>\n\
+</table>",
+
 	pass        : [],
+	
 	fail        : [],
+	
 	valid       : function(input) {
 		var item = $(input);
+		var results = true;
+		item.filter('style').each(function(index, el) {
+			var text = $(el).text();
+			if (!text.match(/.odd\W+background-color\W*:\W*gray/m)) {
+				results = false;
+			}
+			if (!text.match(/.even\W+background-color\W*:\W*lightgray/m)) {
+				results = false;
+			}
+		});
+		return results;
 		return item.children('span.odd').length == 4 && item.children('span.even').length == 4;
 	}
 }));
