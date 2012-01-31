@@ -5,6 +5,42 @@ body {
 	font-size: 13px;
 }
 
+#banner {
+	display: none;
+	background-color: pink;
+	height : 1.5em;
+	width  : 90%;
+	margin : 0 auto;
+	border : solid 2px red;
+	border-top-width: 0;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-moz-border-radius-bottomleft: 5px;
+}
+
+#banner-message {
+	text-align: center;
+	width     : 90%;
+	margin    : 0 auto;
+	font-weight: bold;
+}
+
+#banner-close {
+	background-color: red;
+	color: white;
+	font-weight: bold;
+	width: 1.5em;
+	height: 1.5em;
+	text-align:center;
+	vertical-align: middle;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+
 /* Light Border
  *
  * This is a light-gray border*/

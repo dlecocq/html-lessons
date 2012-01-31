@@ -13,6 +13,7 @@
 		<script src="js/session.js"></script>
 		<script src="js/editor.js"></script>
 		<script src="js/units.js"></script>
+		<script src="js/banner.js"></script>
 		<script src="js/units/1/01-hello-world.js"></script>
 		<script src="js/units/1/02-headers.js"></script>
 		<script src="js/units/1/03-attributes.js"></script>
@@ -49,6 +50,7 @@
 		<!-- Initialization -->
 		<script>
 			$(document).ready(function() {
+				Banner.initialize();
 				Editor.initialize();
 				HTMLessons.initialize();
 			});
@@ -68,6 +70,14 @@
 						<div class='button left'><a href='badges.html'>Badges</a></div>
 					</div>
 				</div>
+			</div>
+		</div>
+		<div id='banner' class='full-width row'>
+			<div id='banner-message' class='left'>
+				This is a message, for example.
+			</div>
+			<div id='banner-close' class='right button'>
+				x
 			</div>
 		</div>
 		
