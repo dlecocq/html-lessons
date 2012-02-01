@@ -59,59 +59,34 @@
 		</div>
 		
 		<div id='container' class='main-column'>
-			<div id='unit_title_bar' class='full-width row'>
-				<div id='unit_title' class='left'></div>
-				<div id='badging' class='right'></div>
-			</div>
-		
-			<div id='lesson_title_bar' class='full-width row'>
-				<div id='lesson_title' class='left small-half'></div>
-				<div id='lesson_buttons' class='right large-half'>
-					<div class='left'>
-						<a id='submit_button'>Submit</a>
-						<a id='reveal_button'>Give Up</a>
-						<a id='advance_button'>Next Lesson</a>
-					</div>
-					<div id='editor_radio' class='right'>
-						<input type="radio" id="lesson-toggle" checked="checked" name="radio"/><label for="lesson-toggle">Lesson</label>
-						<input type="radio" id="scratch-toggle" name="radio"/><label for="scratch-toggle">Scratch</label>
-					</div>
+			<div class='about-section full-width row'>
+				<div class='half left'>
+					<h2>Motivation</h2>
+					<p style='text-align:justify'>
+						This project was originally for my wife, Erin, who recently
+						expressed an interest in web design. Finding no interactive
+						HTML tutorials (though plenty of interactive editors), I 
+						based this roughly on the
+						<a href='http://www.w3schools.com/html/default.asp'>W3Schools</a>
+						tutorial, and heavily inspired (obviously) by
+						<a href='http://www.codecademy.com/'>codecademy</a>. Much of
+						the initial coding was actually done around 3 am on a sleepless
+						night when I finally figured it had to be done.
+					</p>
 				</div>
-			</div>
-			
-			<div id='work-container' class='full-width row'>
-				<!-- The lesson container is where the lesson itself is shown -->
-				<div id='lesson_container' class='left small-half'>
-					<div id='lesson_message' class='cm-s-default'></div>
-					<!-- And this is where the explanation, if any, will go -->
-					<div id='explanation' ></div>
-				</div>
-				
-				<div class='right large-half'>
-					<!-- The input container holds where the user does his/her work -->
-					<div id='input_container' class='light-border full-width row'>
-						<textarea id='input'></textarea>
-					</div>
-					<!-- This is where the preview of your work will go -->
-					<div id='preview' class='light-border full-width row'></div>
-				</div>
-				<div id='results_container' class='full-width row'>
-				</div>
-			</div>
-			
-			<div id='scratch-container'>
-				<div class='full-width row'>
-					This editor is a chance for you to play around with your
-					own scratchpad outside of the context of a lesson.
-				</div>
-				<div class='light-border half left'>
-					<textarea id='scratch'></textarea>
-				</div>
-			
-				<div id='scratch-preview' class='light-border half right'>
+				<div class='half right'>
+					<h2>Contributing</h2>
+					<p>
+						This project is hosted at 
+						<a href='https://github.com/dlecocq/HTMLessons'>github</a>, and
+						I encourage you to edit, add content, etc. if you feel so inclined.
+						The easiest way to do so is to just look at the first lesson for 
+						an example of how to add additional lessons. Also, as it is glaringly
+						obvious, I don't do a lot of markup or web design and would welcome
+						any design considerations.
+					</p>
 				</div>
 			</div>
 		</div>
-		<!-- This is where the fruit of your labor is displayed -->
 	</body>
 </html>

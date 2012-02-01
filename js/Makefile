@@ -25,4 +25,5 @@ lessons:
 	--js units/5/01-style.js \
 	--js units/5/02-more-styles.js \
 	--js units/5/03-style-tag.js \
-	--js units/5/04-classes.js
+	--js units/5/04-classes.js \
+	--js units/5/05-span.js

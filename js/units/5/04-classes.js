@@ -25,11 +25,11 @@ track across long rows of data. Update the <span class='cm-tag'>\
 	input       : "\
 <style>\n\
 .odd {\n\
-  <!-- My background-color should be gray, or perhaps Earl Grey, hot -->\n\
+    <!-- My background-color should be gray, or perhaps Earl Grey, hot -->\n\
 }\n\
 \n\
 .even {\n\
-  <!-- My background-color should be lightgray -->\n\
+    <!-- My background-color should be lightgray -->\n\
 }\n\
 </style>\n\
 <table>\n\
@@ -51,11 +51,11 @@ track across long rows of data. Update the <span class='cm-tag'>\
 	solution    : "\
 <style>\n\
 .odd {\n\
-  background-color: gray;\n\
+    background-color: gray;\n\
 }\n\
 \n\
 .even {\n\
-  background-color: lightgray;\n\
+    background-color: lightgray;\n\
 }\n\
 </style>\n\
 <table>\n\
@@ -91,6 +91,5 @@ track across long rows of data. Update the <span class='cm-tag'>\
 			}
 		});
 		return results;
-		return item.children('span.odd').length == 4 && item.children('span.even').length == 4;
 	}
 }));

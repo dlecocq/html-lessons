@@ -7,27 +7,24 @@ addLesson(Object({
 specify the <span class='cm-atom'>style</span> attribute for every \
 element you'd like to change. And, it makes it difficult to change that \
 styling (if you decide you'd prefer a different font, or size, etc.). \
-Fortunately, CSS (<span class='definition'>cascading style sheets</span>) \
-and the <span class='cm-tag'>&lt;style&gt;</span> tag solve this problem.</p>\
-<p>When you use the <span class='cm-atom'>style</span> attribute, you're \
-actually already using CSS syntax. Style definitions are often included \
-as a separate file so that they can be used to style several pages on \
-a website in the same way. If every page on a site can reference the \
-same style definitions, it helps with continuity and to make all pages \
-have the same look and feel.</p>\
-<p>Alternatively, you can use the <span class='cm-tag'>&lt;style&gt;</span> \
-tag to specify the style in the same HTMl document. We'll talk more about \
-<span class='definition'>selectors</span> in a moment, but they're a \
-way to describe to what elements a styling should apply. They can get \
-very complex and very specific, but for now we'll use their simplist form, \
-which is just to name a tag. At right, we have the same list from the \
-last lesson, along with a style tag describing how \
-<span class='cm-tag'>&lt;li&gt;</span> tags should be styled. Modify \
-that styling to make the font blue, 15 pixels, and Verdana.</p>",
+Fortunately, the <span class='cm-tag'>&lt;style&gt;</span> tag solves \
+this problem.</p>\
+<p>In the style tag, you're actually another language, CSS (\
+<span class='definition'>cascading style sheets</span>). It mostly \
+consists of a <span class='definition'>selector</span>, a '{', the \
+same type of style definition you'd use in the <span class='cm-atom'>\
+style</span> attribute, and then a '}'.</p>\
+<p>The <span class='definition'>selector</span> describes what HTML \
+elements should have that styling applied to them. They can be made to \
+be very specific and descriptive, or very wide-ranging. We'll talk more \
+about them later, but in our case the simple tag name <span class='cm-tag'>\
+li</span> simply means that the style enclosded in the {}'s applies to \
+all <span class='cm-tag'>l</span>ist <span class='cm-tag'>i</span>tems.</p>\
+<p>Modify the styling to make the font blue, 15 pixels, and Verdana.</p>",
 	
 	input       : "<style>\n\
 li {\n\
-  color: red;\n\
+    color: red;\n\
 }\n\
 </style>\n\
 \n\
@@ -40,9 +37,9 @@ li {\n\
 
 	solution    : "<style>\n\
 li {\n\
-  color: blue;\n\
-  font-size: 15px;\n\
-  font-family: Verdana;\n\
+    color: blue;\n\
+    font-size: 15px;\n\
+    font-family: Verdana;\n\
 }\n\
 </style>\n\
 \n\

@@ -114,6 +114,10 @@ body {
 	font: small-caps bold 20px verdana,sans-serif;
 }
 
+#logo > a {	
+	color: white;
+}
+
 #header_buttons {
 }
 
@@ -127,11 +131,15 @@ body {
 }
 
 a {
-	color: white;
 	text-decoration: none;
 }
 
+.about-section > div {
+	line-height: 1.7em;
+}
+
 .button > a {
+	color: white;
 	font: 10px verdana-bold;
 }
 
@@ -247,4 +255,12 @@ body {
 
 .unit-lesson-incomplete {
 	background-color: red;
+}
+
+#scratch-container {
+	display: none;
+}
+
+#scratch-preview{
+	height: 300px;
 }

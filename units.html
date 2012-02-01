@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Learn HTML</title>
+		<title>HTMLessons</title>
 		<!-- Styling for jQuery UI -->
 		<link rel="stylesheet" href="css/jquery-ui.css" type="text/css" media="all">
 		<!-- Styling -->
@@ -39,7 +39,7 @@
 			for (var j in unit.lessons) {
 				var lesson = unit.lessons[j];
 				var lessonDiv = $('<div>').addClass('full-width row');
-				var title = $('<a>').text(lesson.title).attr('href', 'learn.html#lesson' + count);
+				var title = $('<a>').text(lesson.title).attr('href', 'index.html#lesson' + count);
 				lessonDiv.append($('<div>').addClass('unit-lesson-title').append(title));
 				var d = $('<div>').addClass('unit-lesson-status');
 				if (successes[lesson.id] != null) {
@@ -56,7 +56,7 @@
 		}
 		
 		$(document).ready(function() {
-			successes = Session.get('successes');
+			successes = Session.get('successes') || {};
 			for (var i in units) {
 				if (i < Math.floor(units.length / 2)) {
 					$('#column-one').append(makeUnit(units[i]));
@@ -72,14 +72,12 @@
 		<div id='header' class='full-width row'>
 			<div class='main-column'>
 				<div id='logo' class='left'>
-					HTMLessons
-					<!--<img src='img/htmlessons.png' height='100px'/>-->
+					<a href='index.html'>HTMLessons</a>
 				</div>
 				<div id='header_buttons' class='right large-half'>
 					<div class='right'>
 						<div class='button left'><a href='units.html'>Units</a></div>
-						<div class='button left'><a href='progress.html'>Progress</a></div>
-						<div class='button left'><a href='badges.html'>Badges</a></div>
+						<div class='button left'><a href='about.html'>About</a></div>
 					</div>
 				</div>
 			</div>

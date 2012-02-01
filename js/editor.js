@@ -1,5 +1,6 @@
 var Editor = Object({
 	editor : null,
+	scratch: null,
 	
 	initialize: function() {
 		Editor.editor = CodeMirror.fromTextArea($('#input')[0], {
@@ -7,19 +8,29 @@ var Editor = Object({
 			mode: 'htmlmixed',
 			lineNumbers: true,
 			onChange: function(editor, opts) {
-				Editor.preview();
+				$('#preview').html(Editor.get());
 			}
 		});
 		
-		// The button to turn it in
-		$('#submit_button').click(function() {
-			HTMLessons.checkLesson();
+		$('#lesson-toggle').click(function() {
+			$('#work-container').show();
+			$('#scratch-container').hide();
 		});
 		
-		// The button to give up and see the solution
-		$('#reveal_button').click(function() {
-			HTMLessons.revealSolution();
-		})
+		$('#scratch-toggle').click(function() {
+			if (Editor.scratch == null) {
+				Editor.scratch = CodeMirror.fromTextArea($('#scratch')[0], {
+					mode: 'htmlmixed',
+					lineNumbers: true,
+					onChange: function(editor, opts) {
+						$('#scratch-preview').html(Editor.scratch.getValue());
+					}
+				});
+			}
+			Editor.scratch.refresh();
+			$('#work-container').hide();
+			$('#scratch-container').show();
+		});
 	},
 	
 	// Get the contents of the editor
@@ -34,11 +45,6 @@ var Editor = Object({
 	
 	// Show a preview of our code
 	preview: function() {
-		$('#preview').html(Editor.get()).show();
-	},
-	
-	// Hide said preview
-	hidePreview: function() {
-		$('#preview').hide();
+		$('#preview').html(Editor.get());
 	}
 });

@@ -16,11 +16,14 @@ var Banner = Object({
 	
 	initialize: function() {
 		$('#banner-close').click(function() {
+			// You should close this at least once to be 
+			// considered as having visited
+			Session.set('visited', true);
 			Banner.hide();
 		});
 		
 		if (Session.get('visited') == null) {
-			Banner.show('Hello, and welcome!');
+			Banner.show('Welcome to HTMLessons! Move through these short lessons to learn HTML!');
 		}
 	}
 });

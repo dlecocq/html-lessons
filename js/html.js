@@ -15,6 +15,16 @@ var HTMLessons = Object({
 		
 		$('#editor_radio').buttonset();
 		
+		// The button to turn it in
+		$('#submit_button').click(function() {
+			HTMLessons.checkLesson();
+		});
+		
+		// The button to give up and see the solution
+		$('#reveal_button').click(function() {
+			HTMLessons.revealSolution();
+		});
+		
 		$(window).bind('hashchange', HTMLessons.checkURL);
 		HTMLessons.checkURL();
 	},
@@ -32,7 +42,7 @@ var HTMLessons = Object({
 	
 	// Set the page's title
 	setTitle : function(title)  {
-		$("title").text('Learn HTML | ' + title);
+		$("title").text('HTMLessons | ' + title);
 	},
 	
 	checkURL : function() {
@@ -55,11 +65,9 @@ var HTMLessons = Object({
 	
 	// Display a particular lesson
 	displayLesson : function(number) {
-		if (number > lessons.length) {
-			$('#lesson_title').text('That\'s All For Now!');
-			$('#lesson_message').text(endMessage);
-			Editor.set('<p>That\'s all, folks!</p>');
-			return;
+		if (number >= lessons.length) {
+			Banner.show('That\'s all the lessons we have for now. Check back soon!');
+			number = lessons.length - 1;
 		}
 		
 		var lesson = lessons[number];
