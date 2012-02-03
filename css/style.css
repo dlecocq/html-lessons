@@ -264,3 +264,14 @@ body {
 #scratch-preview{
 	height: 300px;
 }
+
+#status {
+	color: white;
+	height: 13px;
+	margin-left: 5px;
+	padding: 5px;
+	display: none;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}

@@ -22,7 +22,13 @@ var HTMLessons = Object({
 		
 		// The button to give up and see the solution
 		$('#reveal_button').click(function() {
-			HTMLessons.revealSolution();
+			if ($(this).text() == 'Give Up') {
+				HTMLessons.revealSolution();
+				$(this).button('option', 'label', 'Try Again');
+			} else {
+				HTMLessons.resetSolution();
+				$(this).button('option', 'label', 'Give Up');
+			}
 		});
 		
 		$(window).bind('hashchange', HTMLessons.checkURL);
@@ -70,6 +76,9 @@ var HTMLessons = Object({
 			number = lessons.length - 1;
 		}
 		
+		$('#status').hide();
+		$('#reveal_button').button('option', 'label', 'Give Up');
+		
 		var lesson = lessons[number];
 		// Pre-fill the input space with the provided input
 		Editor.set(lesson.input);
@@ -105,6 +114,14 @@ var HTMLessons = Object({
 		HTMLessons.onLessonRevealed(lesson);
 	},
 	
+	// This resets the editor
+	resetSolution : function() {
+		var lesson = lessons[HTMLessons.current];
+		if (lesson.input) {
+			Editor.set(lesson.input);
+		}
+	},
+	
 	/* Callbacks
 	 *
 	 * These are all the callbacks for various stages of completion.
@@ -120,7 +137,7 @@ var HTMLessons = Object({
 	
 	// This is called when a lesson is correctly finished
 	onLessonCorrect : function(lesson) {
-		alert('Correct!');
+		$('#status').removeClass('failure').addClass('success').text('Correct!').show();
 		$('#advance_button').button('enable');
 		var successes = Session.get('successes') || {};
 		if (successes[lesson.id] == null) {
@@ -131,7 +148,7 @@ var HTMLessons = Object({
 	
 	// This is called when a lesson is incorrectly finished
 	onLessonError : function(lesson) {
-		alert('Nope, sorry!');
+		$('#status').removeClass('success').addClass('failure').text('Not Quite!').show();
 	},
 	
 	// This is called when all the lessons for a unit have been 
