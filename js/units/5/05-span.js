@@ -1,6 +1,6 @@
 // Classes
 addLesson(Object({
-	title       : 'Spick and Span',
+	title       : 'Span-ish Inquisition',
 	id          : 'span',
 	description : "\
 <p>One of the features that makes classes particularly useful (especially \
@@ -18,56 +18,69 @@ same styling as in the editor: \
 <span class='cm-atom'>class</span>=\
 <span class='cm-comment'>\"cm-tag\"</span>\
 <span class='cm-tag'>&gt;</span>tag<span class='cm-tag'>&lt;/span&gt;\
-</span>. Writing the HTML to make that code snippet \
-appear like it does is left as an exercise for the curious reader.</p>\
-<p>Place all numbers and equations in a <span class='cm-tag'>&lt;span&gt;\
-</span> to style them with the class 'math.'</p>",
+</span>. In fact, making that HTML appear color coded involves \
+quite a few <span class='cm-tag'>&lt;span&gt;</span> tags. \
+The curious reader might consider it an exercise.</p>\
+<p>Place the names of the characters in this scene in <span class='cm-tag'>&lt;span&gt;\
+</span> tag to style them with the class 'name.'</p>",
 
 	input       : "\
 <style>\n\
-.math {\n\
+.name {\n\
 	font-family: monospace;\n\
     background-color: lightgray;\n\
     font-size: 14px;\n\
 }\n\
 </style>\n\n\
 <p>\n\
-  There are 10 types of people. \n\
-  Those who understand binary, and those who don't.\n\
+  Mr. Praline: I'll tell you what's wrong with it,\n\
+  my lad. HE's dead, that's what's wrong with it!\n\
 </p>\n\n\
 <p>\n\
-  Interestingly enough, e<sup>&pi;&times;i</sup>=-1\n\
+  Owner: No, no, 'e's uh,...he's resting.\n\
 </p>\n\n\
 <p>\n\
-  Light travels at about 3&times;10<sup>8</sup> m/s \n\
-  in the vacuum of space\n\
+  Mr. Praline: Look, matey, I know a dead parrot\n\
+  when I see one, and I'm looking at one right now.\n\
+</p>\n\n\
+<p>\n\
+  Owner: No no he's not dead, he's, he's restin'!\n\
+  Remarkable bird, the Norwegian Blue, idn'it, ay?\n\
+  Beautiful plumage!\n\
+</p>\n\n\
+<p>\n\
+  Mr. Praline: The plumage don't enter into it.\n\
+  It's stone dead.\n\
 </p>",
 
 	solution    : "\
 <style>\n\
-.odd {\n\
-    background-color: gray;\n\
-}\n\
-\n\
-.even {\n\
+.name {\n\
+	font-family: monospace;\n\
     background-color: lightgray;\n\
+    font-size: 14px;\n\
 }\n\
-</style>\n\
-<table>\n\
-  <tr class='odd'>\n\
-    <td>Jean-Luc</td><td>Picard</td>\n\
-  </tr><tr class='even'>\n\
-    <td>William</td><td>Riker</td>\n\
-  </tr><tr class='odd'>\n\
-    <td>Geordi</td><td>La Forge</td>\n\
-  </tr><tr class='even'>\n\
-    <td>Wesley</td><td>Crusher</td>\n\
-  </tr><tr class='odd'>\n\
-    <td>Deanna</td><td>Troi</td>\n\
-  </tr><tr class='even'>\n\
-    <td>Tasha</td><td>Yar</td>\n\
-  </tr>\n\
-</table>",
+</style>\n\n\
+<p>\n\
+  <span class='name'>Mr. Praline</span>: I'll tell you what's wrong with it,\n\
+  my lad. HE's dead, that's what's wrong with it!\n\
+</p>\n\n\
+<p>\n\
+  <span class='name'>Owner</span>: No, no, 'e's uh,...he's resting.\n\
+</p>\n\n\
+<p>\n\
+  <span class='name'>Mr. Praline</span>: Look, matey, I know a dead parrot\n\
+  when I see one, and I'm looking at one right now.\n\
+</p>\n\n\
+<p>\n\
+  <span class='name'>Owner</span>: No no he's not dead, he's, he's restin'!\n\
+  Remarkable bird, the Norwegian Blue, idn'it, ay?\n\
+  Beautiful plumage!\n\
+</p>\n\n\
+<p>\n\
+  <span class='name'>Mr. Praline</span>: The plumage don't enter into it.\n\
+  It's stone dead.\n\
+</p>",
 
 	pass        : [],
 	
@@ -75,14 +88,13 @@ appear like it does is left as an exercise for the curious reader.</p>\
 	
 	valid       : function(input) {
 		var item = $(input);
-		var results = true;
-		item.filter('style').each(function(index, el) {
+		var results = item.find('span[class="name"]').length == 5;
+		item.find('span[class="name"]').each(function(index, el) {
 			var text = $(el).text();
-			if (!text.match(/.odd\W+background-color\W*:\W*gray/m)) {
-				results = false;
-			}
-			if (!text.match(/.even\W+background-color\W*:\W*lightgray/m)) {
-				results = false;
+			if (!text.match(/\W*mr\W*praline\W*/i)) {
+				if (!text.match(/\W*owner\W*/i)) {
+					results = false;
+				}
 			}
 		});
 		return results;
