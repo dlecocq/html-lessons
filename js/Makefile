@@ -26,4 +26,9 @@ lessons:
 	--js units/5/02-more-styles.js \
 	--js units/5/03-style-tag.js \
 	--js units/5/04-classes.js \
-	--js units/5/05-span.js
+	--js units/5/05-span.js \
+	--js units/7/01-forms.js \
+	--js units/7/02-names.js \
+	--js units/7/03-radio-check.js \
+	--js units/7/04-submit.js \
+	--js units/7/05-select.js
